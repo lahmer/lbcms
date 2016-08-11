@@ -10,9 +10,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 #***********************************************************************************************************************
 #This part is didecated to add the directories of the libraries shared files
 #***********************************************************************************************************************
-                #link_directories(/usr/lib)
+                link_directories(/usr/lib)
+                link_directories(/usr/local/lib)
 
 
 set(SOURCE_FILES main.cpp Utils/SshConnection.cpp Utils/SshConnection.h lbcmsCommon.h Utils/Logger.cpp Utils/Logger.h lbcmsException.cpp lbcmsException.h Utils/SystemUtils.cpp Utils/SystemUtils.h Utils/FileManager/FileBase.cpp Utils/FileManager/FileBase.h Utils/FileManager/ConfigFile.cpp Utils/FileManager/ConfigFile.h)
 add_executable(ClioTest ${SOURCE_FILES} )
-TARGET_LINK_LIBRARIES(ClioTest ssh)
+TARGET_LINK_LIBRARIES(ClioTest ssh config++)

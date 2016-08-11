@@ -6,7 +6,7 @@
 
 #include"ConfigFile.h"
 namespace lbcms{
-   /* ConfigFile::ConfigFile(std::string &path):FileBase(path) {
+    ConfigFile::ConfigFile(std::string &path):FileBase(path) {
         try {
             m_ConfigFile.read(getFileHandler());
         }catch (libconfig::FileIOException exception){
@@ -16,5 +16,5 @@ namespace lbcms{
             Logger::logError("Error while parsing the configuration file @ = "+m_path+"\n"+exception1.what());
             throw lbcmsException(LBCMS_UTILS_CONFIG_PARSE_ERROR);
         }
-    }*/
+    }
 }
