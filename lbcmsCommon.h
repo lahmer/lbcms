@@ -27,7 +27,7 @@
 #define LBCMS_UTILS_FILE_ALREADY_EXISTS                 0x10004
 #define LBCMS_UTILS_CONFIG_FILE_READ_ERROR              0x10005
 #define LBCMS_UTILS_CONFIG_PARSE_ERROR                  0x10006
-#define yes
+#define yes 0
 
 #define LBCMS_DEBUG
 #endif //CLIOTEST_LBCMSCOMMON_H
