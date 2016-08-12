@@ -6,7 +6,6 @@
 #define CLIOTEST_LBCMSEXCEPTION_H
 
 #include"lbcmsCommon.h"
-#include<exception>
 namespace lbcms {
     class lbcmsException : public std::exception {
     private:

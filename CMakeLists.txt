@@ -14,6 +14,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
                 link_directories(/usr/local/lib)
 
 
-set(SOURCE_FILES main.cpp Utils/SshConnection.cpp Utils/SshConnection.h lbcmsCommon.h Utils/Logger.cpp Utils/Logger.h lbcmsException.cpp lbcmsException.h Utils/SystemUtils.cpp Utils/SystemUtils.h Utils/FileManager/FileBase.cpp Utils/FileManager/FileBase.h Utils/FileManager/ConfigFile.cpp Utils/FileManager/ConfigFile.h)
+set(SOURCE_FILES main.cpp Utils/SshConnection.cpp Utils/SshConnection.h lbcmsCommon.h Utils/Logger.cpp Utils/Logger.h lbcmsException.cpp lbcmsException.h Utils/SystemUtils.cpp Utils/SystemUtils.h Utils/FileManager/FileBase.cpp Utils/FileManager/FileBase.h Utils/FileManager/ConfigFile.cpp Utils/FileManager/ConfigFile.h Utils/Communication/TlsServer.cpp Utils/Communication/TlsServer.h Utils/Communication/SocketServer.cpp Utils/Communication/SocketServer.h)
 add_executable(ClioTest ${SOURCE_FILES} )
-TARGET_LINK_LIBRARIES(ClioTest ssh config++)
+TARGET_LINK_LIBRARIES(ClioTest ssh config++ boost_system boost_thread)

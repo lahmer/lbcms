@@ -16,6 +16,17 @@
 #include"Utils/FileManager/FileBase.h"
 #include<libconfig.h++>
 #include"Utils/FileManager/FileBase.h"
+#include"Utils/Communication/TlsServer.h"
+#include "openssl/bio.h"
+#include "openssl/ssl.h"
+#include "openssl/err.h"
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include"Utils/Communication/SocketServer.h"
+#include<exception>
 
 
 
@@ -27,7 +38,14 @@
 #define LBCMS_UTILS_FILE_ALREADY_EXISTS                 0x10004
 #define LBCMS_UTILS_CONFIG_FILE_READ_ERROR              0x10005
 #define LBCMS_UTILS_CONFIG_PARSE_ERROR                  0x10006
-#define yes 0
+#define LBCMS_UTILS_COMMUNICATION_SOCKET_ERROR          0x10007
+#define LBCMS_UTILS_COMMUNICATION_SOCKET_BIND_ERROR     0x10008
+#define LBCMS_UTILS_COMMUNICATION_CLIENT_ERROR          0x10009
+#define LBCMS_UTILS_COMMUNICATION_MESSAGE_SIZE_OVERFLOW 0x10010
+#define LBCMS_UTILS_COMMUNICATION_RECIEVE_ERROR         0x10011
+
+#define LBCMS_UTILS_COMMUNICATION_SOCKETSERVER_BUFFER_SIZE          1024
+
 
 #define LBCMS_DEBUG
 #endif //CLIOTEST_LBCMSCOMMON_H
