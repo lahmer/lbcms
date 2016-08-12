@@ -9,8 +9,11 @@
 namespace lbcms{
 class Logger {
 public:
-    static void logError (std::string);
-    static void logDebug(std::string);
+    ///This function is used to save error messages in the log file
+    ///and to print them in the screen in case of debug
+    ///@param [in] msg a message that indicates the error string to be displayed
+    static void logError (std::string msg);
+    static void logDebug(std::string msg );
 };
 }
 
