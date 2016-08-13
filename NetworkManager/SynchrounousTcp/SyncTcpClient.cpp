@@ -35,7 +35,7 @@ namespace lbcms{
 
         std::string SyncTcpClient::RecieveMessage() {
             boost::asio::streambuf buf;
-            boost::asio::read_until(*m_socket,buf,'/n');
+            boost::asio::read_until(*m_socket,buf,'\n');
             std::istream input(&buf);
             std::string response ;
             std::getline(input , response);

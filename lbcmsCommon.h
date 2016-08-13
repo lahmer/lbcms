@@ -20,8 +20,11 @@
 #include "Utils/SystemUtils.h"
 #include"Utils/FileManager/FileBase.h"
 #include"NetworkManager/SynchrounousTcp/SyncTcpClient.h"
-#include "NetworkManager/NetworkService/Service.h"
-#include "NetworkManager/NetworkService/ThreadedService.h"
+#include<libvirt/libvirt.h>
+#include "NetworkManager/SynchrounousTcp/TcpHandler.h"
+#include"NetworkManager/SynchrounousTcp/TcpServer.h"
+#include"NetworkManager/SynchrounousTcp/Service.h"
+
 
 #define LBCMS_Utils_SSH_CONNECTION_ERROR                0x10000
 #define LBCMS_UTILS_SSH_AUTHENIFICATION_ERROR           0x10001

@@ -14,6 +14,16 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
                 link_directories(/usr/local/lib)
 
 
-set(SOURCE_FILES main.cpp Utils/SshConnection.cpp Utils/SshConnection.h lbcmsCommon.h Utils/Logger.cpp Utils/Logger.h lbcmsException.cpp lbcmsException.h Utils/SystemUtils.cpp Utils/SystemUtils.h Utils/FileManager/FileBase.cpp Utils/FileManager/FileBase.h Utils/FileManager/ConfigFile.cpp Utils/FileManager/ConfigFile.h NetworkManager/SynchrounousTcp/SyncTcpClient.cpp NetworkManager/SynchrounousTcp/SyncTcpClient.h NetworkManager/NetworkService/Service.h NetworkManager/NetworkService/ThreadedService.h NetworkManager/NetworkService/ThreadedService.cpp NetworkManager/NetworkService/Sevice.cpp)
+set(SOURCE_FILES
+        main.cpp
+        Utils/SshConnection.cpp Utils/SshConnection.h
+        lbcmsCommon.h
+        Utils/Logger.cpp Utils/Logger.h
+        lbcmsException.cpp lbcmsException.h
+        Utils/SystemUtils.cpp Utils/SystemUtils.h
+        Utils/FileManager/FileBase.cpp Utils/FileManager/FileBase.h
+        Utils/FileManager/ConfigFile.cpp Utils/FileManager/ConfigFile.h
+        NetworkManager/SynchrounousTcp/SyncTcpClient.cpp NetworkManager/SynchrounousTcp/SyncTcpClient.h
+        NetworkManager/SynchrounousTcp/TcpServer.cpp NetworkManager/SynchrounousTcp/TcpServer.h NetworkManager/SynchrounousTcp/TcpHandler.cpp NetworkManager/SynchrounousTcp/TcpHandler.h NetworkManager/SynchrounousTcp/Service.cpp NetworkManager/SynchrounousTcp/Service.h)
 add_executable(ClioTest ${SOURCE_FILES} )
-TARGET_LINK_LIBRARIES(ClioTest ssh config++ boost_system boost_thread)
+TARGET_LINK_LIBRARIES(ClioTest ssh config++ boost_system boost_thread virt)
