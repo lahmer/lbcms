@@ -6,30 +6,22 @@
 #define CLIOTEST_LBCMSCOMMON_H
 
 #include<plog/Log.h>
-#include"Utils/Logger.h"
-#include "lbcmsException.h"
 #include <iostream>
 #include<libssh/libsshpp.hpp>
+#include <fstream>
+#include<libconfig.h++>
+#include<exception>
+#include <boost/asio.hpp>
+#include<thread>
+
+#include "lbcmsException.h"
+#include"Utils/Logger.h"
 #include"Utils/SshConnection.h"
 #include "Utils/SystemUtils.h"
-#include <fstream>
 #include"Utils/FileManager/FileBase.h"
-#include<libconfig.h++>
-#include"Utils/FileManager/FileBase.h"
-#include"Utils/Communication/TlsServer.h"
-#include "openssl/bio.h"
-#include "openssl/ssl.h"
-#include "openssl/err.h"
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include"Utils/Communication/SocketServer.h"
-#include<exception>
-
-
-
+#include"NetworkManager/SynchrounousTcp/SyncTcpClient.h"
+#include "NetworkManager/NetworkService/Service.h"
+#include "NetworkManager/NetworkService/ThreadedService.h"
 
 #define LBCMS_Utils_SSH_CONNECTION_ERROR                0x10000
 #define LBCMS_UTILS_SSH_AUTHENIFICATION_ERROR           0x10001
