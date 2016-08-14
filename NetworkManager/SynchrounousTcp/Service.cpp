@@ -25,16 +25,23 @@ namespace lbcms{
                     boost::asio::write(*(m_sock.get()),boost::asio::buffer(result));
                 }
                 }catch (boost::system::system_error& e){
-                    Logger::logError(e.what());
+                    Logger::logError("Connections interrupted");
+                     try{
+                        (*m_sock.get()).shutdown(boost::asio::ip::tcp::socket::shutdown_both);
+                        (*m_sock.get()).close();
+                    }catch (boost::system::system_error& e){
+                        Logger::logError("Error while closing the connection");
+                    }
+                    m_sock.reset();
                 }
             }));
         }
         void Service::Stop() {
-            (*m_ConnectionThread.get()).~thread();
-            m_sock.reset();
+
         }
+
         Service::~Service() {
-            Stop();
+            std::cout<<"Deleting the service object "<<std::endl;
         }
         std::string Service::GiveResult(std::string message) {
             std::string result = "Hello World\n";

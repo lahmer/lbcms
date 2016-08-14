@@ -16,7 +16,6 @@
 
 #include "lbcmsException.h"
 #include"Utils/Logger.h"
-#include"Utils/SshConnection.h"
 #include "Utils/SystemUtils.h"
 #include"Utils/FileManager/FileBase.h"
 #include"NetworkManager/SynchrounousTcp/SyncTcpClient.h"
@@ -24,7 +23,8 @@
 #include "NetworkManager/SynchrounousTcp/TcpHandler.h"
 #include"NetworkManager/SynchrounousTcp/TcpServer.h"
 #include"NetworkManager/SynchrounousTcp/Service.h"
-
+#include"Manager/HostManager.h"
+#include "Manager/RemoteHost.h"
 
 #define LBCMS_Utils_SSH_CONNECTION_ERROR                0x10000
 #define LBCMS_UTILS_SSH_AUTHENIFICATION_ERROR           0x10001

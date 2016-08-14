@@ -20,7 +20,6 @@ namespace lbcms {
         private:
             unsigned short m_port;
             std::unique_ptr<std::thread> m_MainThread;
-            std::vector<Service> m_ConnectionsThreads;
             boost::asio::io_service* m_ios;
             boost::asio::ip::tcp::acceptor  *m_acceptor;
             boost::asio::ip::tcp::endpoint *m_ep;

@@ -20,12 +20,8 @@ namespace lbcms{
                         std::shared_ptr<boost::asio::ip::tcp::socket> sock ;
                         sock.reset(new boost::asio::ip::tcp::socket(*m_ios));
                         m_acceptor->accept(*(sock.get()));
-                        //TODO::Here we launch the new thread and add it to the list of threads
-                        Service *srv = new Service(sock);
-                        srv->StartGivingService();
-                     //   m_ConnectionsThreads.push_back(*srv);
-
-                    }
+                        HostManager::AddNewHost(sock);
+                     }
                 }));
         }
         void TcpHandler::Stop() {

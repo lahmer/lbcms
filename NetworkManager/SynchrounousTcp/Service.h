@@ -14,9 +14,9 @@ namespace lbcms {
             void Stop();
             std::string GiveResult(std::string message);
             ~Service();
+            std::shared_ptr<boost::asio::ip::tcp::socket> m_sock;
         private:
             std::unique_ptr<std::thread> m_ConnectionThread;
-            std::shared_ptr<boost::asio::ip::tcp::socket> m_sock;
         };
     }
 }
