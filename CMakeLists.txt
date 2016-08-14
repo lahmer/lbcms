@@ -23,6 +23,6 @@ set(SOURCE_FILES
         Utils/FileManager/FileBase.cpp Utils/FileManager/FileBase.h
         Utils/FileManager/ConfigFile.cpp Utils/FileManager/ConfigFile.h
         NetworkManager/SynchrounousTcp/SyncTcpClient.cpp NetworkManager/SynchrounousTcp/SyncTcpClient.h
-        NetworkManager/SynchrounousTcp/TcpServer.cpp NetworkManager/SynchrounousTcp/TcpServer.h NetworkManager/SynchrounousTcp/TcpHandler.cpp NetworkManager/SynchrounousTcp/TcpHandler.h NetworkManager/SynchrounousTcp/Service.cpp NetworkManager/SynchrounousTcp/Service.h Manager/HostManager.cpp Manager/HostManager.h Manager/RemoteHost.cpp Manager/RemoteHost.h)
+        NetworkManager/SynchrounousTcp/TcpServer.cpp NetworkManager/SynchrounousTcp/TcpServer.h NetworkManager/SynchrounousTcp/TcpHandler.cpp NetworkManager/SynchrounousTcp/TcpHandler.h NetworkManager/SynchrounousTcp/Service.cpp NetworkManager/SynchrounousTcp/Service.h Manager/HostManager.cpp Manager/HostManager.h Manager/RemoteHost.cpp Manager/RemoteHost.h Compute/HyperVisor.cpp Compute/HyperVisor.h Compute/VirtualisationHosCapabilities/VirHostCap.cpp Compute/VirtualisationHosCapabilities/VirHostCap.h Compute/VirtualisationHosCapabilities/VirHostStat.cpp Compute/VirtualisationHosCapabilities/VirHostStat.h)
 add_executable(ClioTest ${SOURCE_FILES} )
 TARGET_LINK_LIBRARIES(ClioTest config++ boost_system boost_thread virt pthread)

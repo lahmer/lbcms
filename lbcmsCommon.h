@@ -13,6 +13,8 @@
 #include<exception>
 #include <boost/asio.hpp>
 #include<thread>
+#include<libvirt/libvirt.h>
+
 
 #include "lbcmsException.h"
 #include"Utils/Logger.h"
@@ -25,21 +27,20 @@
 #include"NetworkManager/SynchrounousTcp/Service.h"
 #include"Manager/HostManager.h"
 #include "Manager/RemoteHost.h"
+#include "Compute/HyperVisor.h"
 
-#define LBCMS_Utils_SSH_CONNECTION_ERROR                0x10000
-#define LBCMS_UTILS_SSH_AUTHENIFICATION_ERROR           0x10001
+
 #define LBCMS_UTILS_DIRECTORY_ALREADY_EXISTS            0x10002
 #define LBCMS_UTILS_DIRECTORY_CREATE_ERROR              0x10003
 #define LBCMS_UTILS_FILE_ALREADY_EXISTS                 0x10004
 #define LBCMS_UTILS_CONFIG_FILE_READ_ERROR              0x10005
 #define LBCMS_UTILS_CONFIG_PARSE_ERROR                  0x10006
-#define LBCMS_UTILS_COMMUNICATION_SOCKET_ERROR          0x10007
-#define LBCMS_UTILS_COMMUNICATION_SOCKET_BIND_ERROR     0x10008
-#define LBCMS_UTILS_COMMUNICATION_CLIENT_ERROR          0x10009
-#define LBCMS_UTILS_COMMUNICATION_MESSAGE_SIZE_OVERFLOW 0x10010
-#define LBCMS_UTILS_COMMUNICATION_RECIEVE_ERROR         0x10011
 
-#define LBCMS_UTILS_COMMUNICATION_SOCKETSERVER_BUFFER_SIZE          1024
+
+            #define HYPERVISOR_QEMU                                 0x10007
+            #define UNRECOGNIZED_HYPERVISOR                         0x10008
+#define HYPERVISOR_UNREACHABLE                          0x10009
+#define HYPERVISOR_DEFAULT_TCP_PORT                     16509
 
 
 #define LBCMS_DEBUG
