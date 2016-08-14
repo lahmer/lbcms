@@ -25,4 +25,4 @@ set(SOURCE_FILES
         NetworkManager/SynchrounousTcp/SyncTcpClient.cpp NetworkManager/SynchrounousTcp/SyncTcpClient.h
         NetworkManager/SynchrounousTcp/TcpServer.cpp NetworkManager/SynchrounousTcp/TcpServer.h NetworkManager/SynchrounousTcp/TcpHandler.cpp NetworkManager/SynchrounousTcp/TcpHandler.h NetworkManager/SynchrounousTcp/Service.cpp NetworkManager/SynchrounousTcp/Service.h Manager/HostManager.cpp Manager/HostManager.h Manager/RemoteHost.cpp Manager/RemoteHost.h)
 add_executable(ClioTest ${SOURCE_FILES} )
-TARGET_LINK_LIBRARIES(ClioTest ssh config++ boost_system boost_thread virt)
+TARGET_LINK_LIBRARIES(ClioTest config++ boost_system boost_thread virt pthread)

@@ -5,6 +5,7 @@
 #include "HostManager.h"
 namespace lbcms{
     std::vector<RemoteHost> HostManager::m_RemoteHost;
+    network::TcpServer* HostManager::m_server;
 
     void HostManager::AddNewHost(std::shared_ptr<boost::asio::ip::tcp::socket> sock) {
         //Verify if the host already exists
@@ -22,6 +23,9 @@ namespace lbcms{
         }
     }
     void HostManager::Init() {
+        //TODO::add reading the configuration file and initialise all parameters from it
         plog::init(plog::debug, "LogFile.txt");
+        m_server = new network::TcpServer(3334);
+        m_server->Start();
     }
 }

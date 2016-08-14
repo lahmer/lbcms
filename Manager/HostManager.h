@@ -6,13 +6,17 @@
 #define CLIOTEST_HOSTMANAGER_H
 #include"../lbcmsCommon.h"
 namespace lbcms {
-    class RemoteHost;
-    class HostManager {
+    namespace network{
+        class TcpServer;
+    }
+     class RemoteHost;
+     class HostManager {
     public:
         static void Init();
         static void AddNewHost(std::shared_ptr<boost::asio::ip::tcp::socket> sock);
     private:
         static std::vector<RemoteHost> m_RemoteHost;
+        static network::TcpServer *m_server;
     };
 }
 
